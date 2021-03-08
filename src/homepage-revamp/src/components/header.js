@@ -5,7 +5,7 @@ import { StarIcon, ArrowForwardIcon} from '@chakra-ui/icons'
 
 
 const Header = props => {
-  const [show, setShow] = React.useState(false);
+  const [show, ] = React.useState(false);
 
   return (
     <Flex

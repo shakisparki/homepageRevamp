@@ -1,5 +1,10 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1a2f7126-6817-47ae-9023-2aac1b7d3615/deploy-status)](https://app.netlify.com/sites/homepagerevamp/deploys)
 
+# Preview
+Preview Main: https://homepagerevamp.netlify.app/
+
+Preview PR: Click on details link beside "Deploy preview ready!" under the "Checks" section at the bottom of PR page
+
 # Introduction 
 TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
 

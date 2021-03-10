@@ -18,6 +18,17 @@ function NavMenu(props){
   )
 }
 
+function MyList(props){
+  return(
+    <Button borderRadius="1px" leftIcon={<Icon as={MdStar}
+      boxSize={8}/>} variant="outline" size="lg"
+      onClick={()=>
+        alert("You have added " + props.noOfItems + " Contacts to your list")}>
+      {"My List (" +  props.noOfItems + ")"} 
+    </Button>
+  )
+}
+
 const Header = props => {
   const [show, ] = React.useState(false);
 
@@ -64,9 +75,7 @@ const Header = props => {
       </InputGroup>
     </Box>
     <ButtonGroup spacing={4} ml="1.5rem">
-          <Button borderRadius="1px" leftIcon={<Icon as={MdStar} boxSize={8}/>} variant="outline" size="lg">
-            My List
-          </Button>
+          <MyList noOfItems={props.noOfListItems}/>
           <Menu>
             <MenuButton as={Button} rightIcon={<ChevronDownIcon />} 
               leftIcon={<Icon as={MdAccountCircle} boxSize={8}/>} 

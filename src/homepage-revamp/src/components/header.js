@@ -1,7 +1,7 @@
 import React from "react";
 import logo from '../images/logo.jpg';
 import { Stack, Box, Icon, Flex, Button, Image, Input, InputGroup,
-         InputRightElement, ButtonGroup, Text } from "@chakra-ui/react";
+         InputRightElement, ButtonGroup, Text,LinkBox, LinkOverlay } from "@chakra-ui/react";
 import {Menu, MenuButton, MenuItem, MenuList} from "@chakra-ui/react"
 import {ChevronDownIcon} from "@chakra-ui/icons"
 import { MdStar, MdAccountCircle } from "react-icons/md";
@@ -20,11 +20,13 @@ function NavMenu(props){
 
 const Header = props => {
   const [show, ] = React.useState(false);
+
   const menudata = nav.map((data) => {
     return (
       <NavMenu title={data.title} href={data.action}/>
     )
   })
+
   return (
     <Flex
       as="nav"
@@ -37,11 +39,13 @@ const Header = props => {
       color="black"
       {...props}
     >
-      
-      <Flex align="center" mr={5}>
-        <Image src={logo}></Image>
-      </Flex>
-
+      <LinkBox>
+        <Flex align="center" mr={5}>
+        <LinkOverlay href="/">
+          <Image src={logo}></Image>
+        </LinkOverlay>
+        </Flex>
+      </LinkBox>
 
     <Stack spacing={8}>
       {/* Flex for the search bar and two buttons */}
@@ -63,9 +67,6 @@ const Header = props => {
           <Button borderRadius="1px" leftIcon={<Icon as={MdStar} boxSize={8}/>} variant="outline" size="lg">
             My List
           </Button>
-          {/* <Button borderRadius="1px" leftIcon={<Icon as={MdAccountCircle} boxSize={8}/>} >
-            My Account
-          </Button> */}
           <Menu>
             <MenuButton as={Button} rightIcon={<ChevronDownIcon />} 
               leftIcon={<Icon as={MdAccountCircle} boxSize={8}/>} 

@@ -1,26 +1,26 @@
 [
     {   
         "title": "Home",
-        "action": "#"
+        "action": "/"
     },
     {   
         "title": "Directory",
-        "action": "#"
+        "action": "/Directory"
     },
     {   
         "title": "Help and Support",
-        "action": "#"
+        "action": "/Help"
     },
     {   
         "title": "News",
-        "action": "#"
+        "action": "/News"
     },
     {   
         "title": "About UKCRK",
-        "action": "#"
+        "action": "/About"
     },
     {   
         "title": "Contact us",
-        "action": "#"
+        "action": "/Contact"
     }
 ]

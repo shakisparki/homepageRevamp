@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, ButtonGroup, Button, Text, Flex,
+import {ButtonGroup, Button, Text, Flex,
 VStack, HStack} from "@chakra-ui/react"
 
 function ControlPanel(props){

@@ -1,21 +1,28 @@
 import React from "react";
 import logo from '../images/logo.jpg';
 import { Stack, Box, Icon, Flex, Button, Image, Input, InputGroup,
-         InputRightElement, ButtonGroup } from "@chakra-ui/react";
+         InputRightElement, ButtonGroup, Text } from "@chakra-ui/react";
 import {Menu, MenuButton, MenuItem, MenuList} from "@chakra-ui/react"
 import {ChevronDownIcon} from "@chakra-ui/icons"
 import { MdStar, MdAccountCircle } from "react-icons/md";
 import nav from "../nav/nav.json"
 
+function NavMenu(props){
+  const currentPage = (window.location.pathname === props.href);
+  return(
+    <Menu>
+      <MenuButton as="a" href={props.href} size="lg">
+        <Text fontWeight={ currentPage ? "bold" : "normal"}>{props.title}</Text>
+      </MenuButton>
+     </Menu>
+  )
+}
+
 const Header = props => {
   const [show, ] = React.useState(false);
   const menudata = nav.map((data) => {
     return (
-      <Menu>
-        <MenuButton size="lg" _active={{ fontWeight: 'bold' }}>
-          {data.title}
-        </MenuButton>
-      </Menu>
+      <NavMenu title={data.title} href={data.action}/>
     )
   })
   return (
@@ -53,7 +60,7 @@ const Header = props => {
       </InputGroup>
     </Box>
     <ButtonGroup spacing={4} ml="1.5rem">
-          <Button borderRadius="1px" leftIcon={<Icon as={MdStar} boxSize={8}/>} variantColor="black" variant="outline" size="lg">
+          <Button borderRadius="1px" leftIcon={<Icon as={MdStar} boxSize={8}/>} variant="outline" size="lg">
             My List
           </Button>
           {/* <Button borderRadius="1px" leftIcon={<Icon as={MdAccountCircle} boxSize={8}/>} >
@@ -62,7 +69,7 @@ const Header = props => {
           <Menu>
             <MenuButton as={Button} rightIcon={<ChevronDownIcon />} 
               leftIcon={<Icon as={MdAccountCircle} boxSize={8}/>} 
-              borderRadius="1px" variantColor="black" variant="outline" size="lg">
+              borderRadius="1px" variant="outline" size="lg">
               My Account
             </MenuButton>
             <MenuList>
@@ -76,15 +83,14 @@ const Header = props => {
 
     <Box
         display={{ sm: show ? "block" : "none", md: "block" }}
-        mt={{ base: 4, md: 0 }}
-      >
-        
-      <ButtonGroup spacing={20}>
-        {menudata}
-      </ButtonGroup>
+        mt={{ base: 4, md: 0 }}>
+
+        <ButtonGroup spacing={20} role="navigation">
+          {menudata}
+        </ButtonGroup>
+      
       </Box>
     </Stack>
-
 
     </Flex>
 

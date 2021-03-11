@@ -13,8 +13,10 @@ function NavMenu(props){
   const currentPage = (window.location.pathname === props.href);
   return(
     <Menu>
-      <MenuButton as="a" href={props.href} size="lg">
-        <Text fontWeight={ currentPage ? "bold" : "normal"}>{props.title}</Text>
+      {/* <MenuButton as="a" href={props.href} size="lg">
+        <Text fontWeight={ currentPage ? "bold" : "normal"}>{props.title}</Text> */}
+      <MenuButton size="lg" _active={{ fontWeight: 'bold' }}> {/* for demonstration */}
+        {props.title}
       </MenuButton>
      </Menu>
   )

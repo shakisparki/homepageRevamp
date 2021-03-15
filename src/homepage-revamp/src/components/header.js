@@ -1,5 +1,6 @@
 import React from "react";
-import logo from '../images/logo.jpg';
+import tdcclogo from '../images/logo.jpg';
+import findlogo from '../images/findLogo.png';
 import { Stack, Box, Icon, Flex, Button, Image, Input, InputGroup,
          InputRightElement, ButtonGroup, Text,LinkBox, LinkOverlay } from "@chakra-ui/react";
 import {Menu, MenuButton, MenuItem, MenuList} from "@chakra-ui/react"
@@ -8,7 +9,8 @@ import { MdStar, MdAccountCircle } from "react-icons/md";
 import {FiLogIn, FiLogOut} from "react-icons/fi";
 import {IoPersonAdd} from "react-icons/io5";
 import {Link,useLocation} from "react-router-dom";
-import nav from "../nav/nav.json"
+import tdccnav from "../nav/nav.json"
+import findnav from "../nav/nav_find.json"
 
 function NavMenu(props){
   return(
@@ -35,6 +37,8 @@ function Header(props){
   const [show, ] = React.useState(false);
   const [loggedIn,setLoggedIn ] = React.useState(false);
   let location = useLocation();
+  const org = (props.currentTheme === "1" ? "tdcc" : "find");
+  const nav = (org === "tdcc" ? tdccnav : findnav);
 
   const menudata = nav.map((data) => {
     return (
@@ -58,7 +62,7 @@ function Header(props){
       <LinkBox>
         <Flex align="center" mr={5}>
         <LinkOverlay href="/">
-          <Image src={logo}></Image>
+          <Image src={(org === "tdcc" ? tdcclogo : findlogo)}></Image>
         </LinkOverlay>
         </Flex>
       </LinkBox>

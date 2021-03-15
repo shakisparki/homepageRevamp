@@ -1,6 +1,6 @@
 import React from 'react';
-import {ButtonGroup, Button, Text, Flex,
-VStack, HStack} from "@chakra-ui/react"
+import {ButtonGroup, Button, Text, Flex, Stack,
+VStack, HStack,RadioGroup,Radio} from "@chakra-ui/react"
 
 function ControlPanel(props){
     return(
@@ -19,6 +19,14 @@ function ControlPanel(props){
                         </Button>
                     </ButtonGroup>
                 </HStack>
+                <RadioGroup onChange={props.setTheme}
+                 value={props.currentTheme}>
+                    <Stack direction="row">
+                    <Text fontWeight="semibold"> Select Theme </Text>
+                    <Radio value="1">TDCC</Radio>
+                    <Radio value="2">FIND</Radio>
+                    </Stack>
+                </RadioGroup>
              </VStack>
             
             

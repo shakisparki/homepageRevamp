@@ -8,12 +8,14 @@ import {ContentView} from "./utilities"
 
 function App(){
   const [noOfListItems,setListNo] = useState(0);
+  const [currentTheme, setTheme] = React.useState("1");
   return(
     <ChakraProvider>
       <Router>
-        <Header noOfListItems={noOfListItems}/>
+        <Header noOfListItems={noOfListItems} currentTheme={currentTheme}/>
         <ControlPanel addToList={()=>setListNo(noOfListItems + 1)} 
-          removeFromList={()=>{noOfListItems > 0 && setListNo(noOfListItems - 1)}}/>
+          removeFromList={()=>{noOfListItems > 0 && setListNo(noOfListItems - 1)}}
+          setTheme={(val)=>setTheme(val)} currentTheme={currentTheme}/>
         <Switch>
           <Route component={ContentView}/>
         </Switch>

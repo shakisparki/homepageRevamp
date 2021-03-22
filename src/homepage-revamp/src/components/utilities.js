@@ -1,4 +1,4 @@
-// Utility Functions
+// Utility Components
 
 export const ContentView = props => {
   return (

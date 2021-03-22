@@ -1,6 +1,7 @@
 
 import React, {useState} from 'react'
 import Header from "./components/header";
+import Banner from "./components/banner";
 import ControlPanel from "./components/control";
 import {ChakraProvider, theme} from "@chakra-ui/react";
 import {BrowserRouter as Router,Switch, Route} from 'react-router-dom';
@@ -27,6 +28,7 @@ function App(){
     <ChakraProvider theme={newTheme}>
       <Router>
         <Header noOfListItems={noOfListItems} currentTheme={currentTheme}/>
+        <Banner />
         <ControlPanel addToList={()=>setListNo(noOfListItems + 1)} 
           removeFromList={()=>{noOfListItems > 0 && setListNo(noOfListItems - 1)}}
           setTheme={(val)=>setTheme(val)} currentTheme={currentTheme}/>

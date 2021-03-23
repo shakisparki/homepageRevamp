@@ -1,0 +1,26 @@
+[
+    {   
+        "title": "FIND Home",
+        "action": "/"
+    },
+    {   
+        "title": "FIND Dir",
+        "action": "/FindDirectory"
+    },
+    {   
+        "title": "FIND Help",
+        "action": "/FindHelp"
+    },
+    {   
+        "title": "FIND News",
+        "action": "/FindNews"
+    },
+    {   
+        "title": "FIND About",
+        "action": "/FindAbout"
+    },
+    {   
+        "title": "FIND Contact",
+        "action": "/FindContact"
+    }
+]

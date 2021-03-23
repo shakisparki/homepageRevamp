@@ -1,0 +1,26 @@
+[
+    {   
+        "title": "Home",
+        "action": "/"
+    },
+    {   
+        "title": "Directory",
+        "action": "/Directory"
+    },
+    {   
+        "title": "Help and Support",
+        "action": "/Help"
+    },
+    {   
+        "title": "News",
+        "action": "/News"
+    },
+    {   
+        "title": "About UKCRK",
+        "action": "/About"
+    },
+    {   
+        "title": "Contact us",
+        "action": "/Contact"
+    }
+]

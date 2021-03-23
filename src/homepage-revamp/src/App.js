@@ -23,15 +23,19 @@ const newTheme = {
 
 function App(){
   const [noOfListItems,setListNo] = useState(0);
+  const [bannerStatus,setBannerStatus] = useState(true);
+  const [headerStatus,setHeaderStatus] = useState(true);
   const [currentTheme, setTheme] = React.useState("1");
   return(
     <ChakraProvider theme={newTheme}>
       <Router>
-        <Header noOfListItems={noOfListItems} currentTheme={currentTheme}/>
-        <Banner />
+         {headerStatus && <Header noOfListItems={noOfListItems} currentTheme={currentTheme}/>}
+         {bannerStatus && <Banner />}
         <ControlPanel addToList={()=>setListNo(noOfListItems + 1)} 
           removeFromList={()=>{noOfListItems > 0 && setListNo(noOfListItems - 1)}}
-          setTheme={(val)=>setTheme(val)} currentTheme={currentTheme}/>
+          setTheme={(val)=>setTheme(val)} currentTheme={currentTheme}
+          powerBanner={(val)=>setBannerStatus(val)} bannerPower = {bannerStatus}
+          powerHeader={(val)=>setHeaderStatus(val)} headerPower = {headerStatus}/>
         <Switch>
           {/* Handle all routes*/}
           <Route component={ContentView}/>
